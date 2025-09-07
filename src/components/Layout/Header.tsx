@@ -77,15 +77,17 @@ const Header: React.FC<HeaderProps> = ({
             <Button
               variant="ghost"
               size="icon"
-              className="relative text-white hover:bg-white/10"
+              className="group relative text-white hover:bg-white/10 transition-all duration-300"
+              title={`${alertCount} new alert${alertCount > 1 ? 's' : ''}`}
             >
-              <Bell className="h-5 w-5" />
+              <Bell className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
               <Badge 
                 variant="destructive" 
-                className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs"
+                className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs animate-pulse bg-urgent text-urgent-foreground shadow-lg border-2 border-white"
               >
                 {alertCount > 9 ? '9+' : alertCount}
               </Badge>
+              <div className="absolute inset-0 rounded-full bg-white/0 transition-all duration-300 group-hover:bg-white/5 group-active:bg-white/10" />
             </Button>
           )}
 

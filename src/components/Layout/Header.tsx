@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Languages, Bell, Menu, Shield, Waves } from 'lucide-react';
+import { Languages, Bell, Menu, Shield, Waves, Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
 interface HeaderProps {
@@ -19,6 +20,7 @@ const Header: React.FC<HeaderProps> = ({
   onMenuToggle,
   alertCount = 0
 }) => {
+  const { theme, setTheme } = useTheme();
   const translations = {
     en: {
       oceanSaksham: 'OceanSaksham',
@@ -86,6 +88,20 @@ const Header: React.FC<HeaderProps> = ({
               </Badge>
             </Button>
           )}
+
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="text-white hover:bg-white/10"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </Button>
 
           <Button
             variant="ghost"

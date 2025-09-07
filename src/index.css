@@ -1,42 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* OceanSaksham Design System - Marine Safety Platform */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Ocean-themed color palette */
+    --background: 0 0% 98%;
+    --foreground: 210 11% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 11% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 11% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Ocean Blue */
+    --primary: 207 90% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 207 90% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Alert Colors */
+    --urgent: 4 90% 58%;
+    --urgent-foreground: 0 0% 100%;
+    
+    --medium: 36 100% 50%;
+    --medium-foreground: 0 0% 100%;
+    
+    --resolved: 122 39% 49%;
+    --resolved-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral Grays */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 210 11% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 4% 87%;
+    --muted-foreground: 0 0% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 210 11% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 207 90% 40%;
 
     --radius: 0.5rem;
+
+    /* Ocean gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(207 90% 40%), hsl(195 100% 50%));
+    --gradient-wave: linear-gradient(180deg, hsl(207 90% 40% / 0.1), transparent);
+    --gradient-alert: linear-gradient(135deg, hsl(4 90% 58%), hsl(36 100% 50%));
+
+    /* Shadows */
+    --shadow-ocean: 0 10px 30px -10px hsl(207 90% 40% / 0.3);
+    --shadow-card: 0 4px 12px hsl(210 11% 15% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +82,52 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 11% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 11% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 11% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 207 90% 50%;
+    --primary-foreground: 210 11% 8%;
+    --primary-hover: 207 90% 45%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --urgent: 4 90% 65%;
+    --urgent-foreground: 210 11% 8%;
+    
+    --medium: 36 100% 60%;
+    --medium-foreground: 210 11% 8%;
+    
+    --resolved: 122 39% 55%;
+    --resolved-foreground: 210 11% 8%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --secondary: 210 11% 15%;
+    --secondary-foreground: 0 0% 95%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 210 11% 20%;
+    --muted-foreground: 0 0% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 210 11% 15%;
+    --accent-foreground: 0 0% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive: 4 90% 65%;
+    --destructive-foreground: 210 11% 8%;
+
+    --border: 210 11% 20%;
+    --input: 210 11% 20%;
+    --ring: 207 90% 50%;
+
+    --sidebar-background: 210 11% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 207 90% 50%;
+    --sidebar-primary-foreground: 210 11% 8%;
+    --sidebar-accent: 210 11% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 210 11% 20%;
+    --sidebar-ring: 207 90% 50%;
   }
 }
 
@@ -100,6 +137,22 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-roboto;
+  }
+
+  /* Ocean wave animations */
+  .wave-animation {
+    background: var(--gradient-wave);
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .transition-ocean {
+    transition: var(--transition-smooth);
   }
 }

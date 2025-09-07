@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,6 +48,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom alert colors
+        urgent: {
+          DEFAULT: "hsl(var(--urgent))",
+          foreground: "hsl(var(--urgent-foreground))",
+        },
+        medium: {
+          DEFAULT: "hsl(var(--medium))",
+          foreground: "hsl(var(--medium-foreground))",
+        },
+        resolved: {
+          DEFAULT: "hsl(var(--resolved))",
+          foreground: "hsl(var(--resolved-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +71,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'ocean-gradient': 'var(--gradient-ocean)',
+        'wave-gradient': 'var(--gradient-wave)',
+        'alert-gradient': 'var(--gradient-alert)',
+      },
+      boxShadow: {
+        'ocean': 'var(--shadow-ocean)',
+        'card': 'var(--shadow-card)',
+      },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'],
+        'sans': ['Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

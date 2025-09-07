@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({
               className="group relative text-white hover:bg-white/10 transition-all duration-300"
               title={`${alertCount} new alert${alertCount > 1 ? 's' : ''}`}
             >
-              <Bell className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
+              <Bell className="h-6 w-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
               <Badge 
                 variant="destructive" 
                 className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs animate-pulse bg-urgent text-urgent-foreground shadow-lg border-2 border-white"
